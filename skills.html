@@ -146,6 +146,28 @@
     max-width:1180px; margin:0 auto; padding:22px 32px;
     color:#dce9f2; font-size:13.5px;
   }
+  .ielts-head{ margin:18px 0 4px; font-size:16px; }
+  .ielts-head i{ font-style:italic; font-weight:400; }
+  .ielts-head b{ font-weight:700; }
+  .ielts-meta{ color:var(--muted); font-size:13.5px; margin:0 0 12px; }
+  .ielts-modules{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:8px; }
+  .ielts-card{
+    border:1px solid var(--rule); border-radius:6px;
+    padding:5px 12px; text-align:center; background:#fafbfc; min-width:84px;
+  }
+  .ielts-card .m{ font-size:10.5px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:var(--sidebar); line-height:1.4; }
+  .ielts-card .b{ font-size:16px; font-weight:700; color:var(--link-hover); line-height:1.3; }
+  .ielts-overall{
+    display:inline-flex; align-items:center; gap:14px; flex-wrap:wrap;
+    border:1px solid var(--rule); border-left:3px solid var(--link-hover);
+    border-radius:6px; padding:6px 14px; background:#f6f9fb; margin-bottom:10px;
+  }
+  .ielts-overall .lbl{ font-size:10.5px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:var(--sidebar); line-height:1.4; }
+  .ielts-overall .score{ font-size:18px; font-weight:700; color:var(--heading); line-height:1.3; }
+  .ielts-overall .score small{ font-size:12px; font-weight:400; color:var(--muted); margin-left:3px; }
+  .ielts-cefr{ text-align:left; padding-left:14px; border-left:1px solid var(--rule); }
+  .ielts-cefr .lvl{ font-size:16px; font-weight:700; color:var(--link-hover); }
+  .ielts-cefr .desc{ color:var(--muted); font-size:12.5px; line-height:1.3; }
 </style>
 </head>
 <body>
@@ -208,7 +230,7 @@
           <li>DOLFINx (FEniCSx) &mdash; finite element method</li>
         </ul>
         <h4>Programming</h4>
-        <ul><li>Python, C++, HTML &amp; CSS</li></ul>
+        <ul><li>Python, C++, MATLAB, HTML &amp; CSS</li><li>Julia (basics)</li></ul>
       </div>
       <div>
         <h4>Professional Certifications</h4>
@@ -223,7 +245,28 @@
     </div>
 
     <h2>IELTS &amp; Language Certification</h2>
-    <div class="placeholder-box">IELTS results / certificate coming soon.</div>
+    <p class="ielts-head"><i>IELTS Academic</i> &ndash; <b>Test Report Form</b></p>
+    <p class="ielts-meta">Test date: 28 August 2026 &middot; Issued 29 August 2026 &middot; British Council, IDP &amp; Cambridge English</p>
+
+    <div class="ielts-modules">
+      <div class="ielts-card"><div class="m">Listening</div><div class="b">6.5</div></div>
+      <div class="ielts-card"><div class="m">Reading</div><div class="b">6.5</div></div>
+      <div class="ielts-card"><div class="m">Writing</div><div class="b">6.0</div></div>
+      <div class="ielts-card"><div class="m">Speaking</div><div class="b">6.0</div></div>
+    </div>
+
+    <div class="ielts-overall">
+      <div>
+        <div class="lbl">Overall Band Score</div>
+        <div class="score">6.5<small>/ 9.0</small></div>
+      </div>
+      <div class="ielts-cefr">
+        <div class="lvl">B2</div>
+        <div class="desc">CEFR &middot; Upper Intermediate</div>
+      </div>
+    </div>
+
+    <p class="pub-desc">The score can be verified by recognising organisations at <a href="https://ielts.org/verify" target="_blank" rel="noopener">ielts.org/verify</a>.</p>
 
   </main>
 </div>
