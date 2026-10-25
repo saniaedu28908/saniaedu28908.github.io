@@ -1,16 +1,14 @@
 /* Animated background: soft colour blobs + travelling soliton pulses (sech^2).
-   Add  <script src="bg.js" defer></script>  before </body> on every page. */
+   Add a script tag with src="bg.js" and defer, before the closing body tag of every page. */
 (function () {
   var css = document.createElement('style');
   css.textContent =
-    'html{background:#f4f8fc}' +
+    'html{background:#f3f7fc}' +
     'body{background:transparent!important}' +
     '#bgcanvas{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}' +
-    '.topbar{background:rgba(255,255,255,.80)!important;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}' +
-    '.layout{background:rgba(255,255,255,.86);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);' +
-    'border-radius:18px;margin-top:28px!important;box-shadow:0 10px 44px rgba(28,93,153,.12);' +
-    'padding-top:40px!important;padding-bottom:56px!important}' +
-    '@media(max-width:820px){.layout{border-radius:0;margin-top:0!important}}';
+    '.topbar{background:transparent!important;border-bottom-color:rgba(60,90,130,.14)!important}' +
+    '.result-card{background:rgba(255,255,255,.62)!important}' +
+    '.figs img{background:rgba(255,255,255,.9)!important}';
   document.head.appendChild(css);
 
   var c = document.createElement('canvas');
@@ -48,10 +46,11 @@
       var y = (b.y + .10 * Math.cos(t * b.sy * 6 + b.p)) * H;
       var r = b.r * Math.max(W, H);
       var rg = ctx.createRadialGradient(x, y, 0, x, y, r);
-      rg.addColorStop(0, 'hsla(' + (b.h + 20 * Math.sin(t * .0001 + b.p)) + ',85%,72%,.42)');
+      rg.addColorStop(0, 'hsla(' + (b.h + 20 * Math.sin(t * .0001 + b.p)) + ',85%,72%,.34)');
       rg.addColorStop(1, 'hsla(' + b.h + ',85%,72%,0)');
       ctx.fillStyle = rg; ctx.fillRect(0, 0, W, H);
     });
+    ctx.fillStyle = 'rgba(255,255,255,.30)'; ctx.fillRect(0, 0, W, H);
 
     pulses.forEach(function (p, i) {
       var pos = ((t * Math.abs(p.v) * 6 + p.o) % 1.4) - .2;
@@ -63,7 +62,7 @@
         var y = (p.y - p.amp * s * s) * H + Math.sin(x * 9 + t * .0006 + i) * H * .006;
         if (px === 0) ctx.moveTo(px, y); else ctx.lineTo(px, y);
       }
-      ctx.strokeStyle = 'hsla(' + p.h + ',80%,55%,.38)';
+      ctx.strokeStyle = 'hsla(' + p.h + ',80%,55%,.30)';
       ctx.lineWidth = p.w * dpr;
       ctx.stroke();
     });
