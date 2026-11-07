@@ -171,6 +171,13 @@
   .fig figcaption{ max-width:200px !important; font-size:12px !important; }
   canvas{ opacity:.45; }
 }
+
+/* ---- CV download button ---- */
+.cv-btn{ display:inline-flex; align-items:center; gap:9px; margin:2px 0 20px; padding:10px 18px; border-radius:999px;
+  background:var(--blue); color:#fff !important; font-size:15px; font-weight:700; text-decoration:none !important;
+  box-shadow:0 3px 10px rgba(28,93,153,.25); transition:background .15s, transform .15s; }
+.cv-btn:hover{ background:var(--blue-dark); transform:translateY(-1px); }
+.cv-btn svg{ width:17px; height:17px; flex:none; }
 </style>
 </head>
 <body>
@@ -222,6 +229,7 @@
   <main class="content">
     
     <h1>Curriculum Vitae</h1>
+    <a class="cv-btn" href="CV_Sania_Shafiq_Updated.pdf" target="_blank" rel="noopener" download="CV_Sania_Shafiq.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 20h14"/></svg>Download CV (PDF)</a>
     <p>Sania Shafiq completed her Master of Philosophy in Mathematics at Riphah International University, Faisalabad, Pakistan. She is deeply committed to advancing research in applied mathematics and its applications to physical systems, with interests spanning the role of mathematics in technology, medical research, and applied sciences. Passionate about interdisciplinary collaboration, she aims to contribute meaningfully to scientific and technological innovation through mathematical research.</p>
 
     <h2>Research Interests</h2>
