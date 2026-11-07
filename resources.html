@@ -170,6 +170,17 @@
   .fig figcaption{ max-width:200px !important; font-size:12px !important; }
   canvas{ opacity:.45; }
 }
+
+/* ---- resources list ---- */
+.res-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:14px; margin:14px 0 6px; }
+.res-item{ border:1px solid var(--rule,#e3e6e8); border-left:4px solid var(--blue,#1c5d99); border-radius:10px; padding:12px 14px 12px; background:rgba(255,255,255,.7); display:flex; flex-direction:column; }
+.res-item p{ margin:0 !important; }
+.res-title{ font-weight:700; color:var(--heading); font-size:15px; line-height:1.35; }
+.res-by{ font-size:12.5px; color:var(--muted); margin-top:4px !important; line-height:1.4; }
+.res-note{ font-size:13.5px; color:var(--text); margin-top:8px !important; line-height:1.5; flex:1; }
+.res-link{ align-self:flex-start; margin-top:10px; font-size:12.5px; font-weight:700; color:var(--blue,#1c5d99) !important; background:var(--blue-tint,#eaf2f8); padding:4px 11px; border-radius:999px; text-decoration:none !important; }
+.res-link:hover{ background:#d6e6f3; }
+.res-badge{ align-self:flex-start; margin-top:10px; font-size:12px; font-weight:700; color:var(--muted); border:1px solid var(--rule,#e3e6e8); padding:3px 10px; border-radius:999px; }
 </style>
 </head>
 <body>
@@ -221,9 +232,22 @@
   <main class="content">
     
     <h1>Mathematics Resources</h1>
-    <p>This page will collect notes, references, and books from my study of applied mathematics &mdash; organised by topic, as they're added.</p>
+    <p>A short reading list for the areas I work in: symmetry methods, Bayesian inverse problems, finite elements, optimization and PINNs. Where a free copy is offered by the authors or a repository, the link goes there.</p>
 
-    <div class="placeholder-box">Notes and book references coming soon.</div>
+    <h2>Lie symmetry and PDEs</h2>
+    <div class="res-grid"><div class="res-item"><p class="res-title">Applications of Symmetry Methods to Partial Differential Equations</p><p class="res-by">G. W. Bluman, A. F. Cheviakov &amp; S. C. Anco &middot; Springer, 2010</p><p class="res-note">Symmetry methods, conservation laws and exact solutions of PDEs.</p><span class="res-badge">Book</span></div><div class="res-item"><p class="res-title">Symmetry and Integration Methods for Differential Equations</p><p class="res-by">G. W. Bluman &amp; S. C. Anco &middot; Springer, 2002</p><p class="res-note">Using symmetries to reduce and solve ODEs and PDEs.</p><span class="res-badge">Book</span></div><div class="res-item"><p class="res-title">Differential Equations: Their Solution Using Symmetries</p><p class="res-by">H. Stephani, edited by M. MacCallum &middot; Cambridge University Press, 1989</p><p class="res-note">An introductory text that solves ODEs and PDEs with symmetries.</p><span class="res-badge">Book</span></div></div>
+
+    <h2>Bayesian inverse problems</h2>
+    <div class="res-grid"><div class="res-item"><p class="res-title">Inverse Problems: A Bayesian Perspective</p><p class="res-by">A. M. Stuart &middot; Acta Numerica, 2010</p><p class="res-note">A standard survey of the Bayesian approach to inverse problems, with PDE examples.</p><a class="res-link" href="https://authors.library.caltech.edu/records/fk9j9-5tq15" target="_blank" rel="noopener">Open PDF (Caltech) &rarr;</a></div><div class="res-item"><p class="res-title">The Bayesian Approach to Inverse Problems</p><p class="res-by">M. Dashti &amp; A. M. Stuart &middot; Handbook of Uncertainty Quantification</p><p class="res-note">Well-posedness and theory for Bayesian inverse problems.</p><a class="res-link" href="https://arxiv.org/abs/1302.6989" target="_blank" rel="noopener">Free on arXiv &rarr;</a></div></div>
+
+    <h2>Finite element method</h2>
+    <div class="res-grid"><div class="res-item"><p class="res-title">The FEniCSx Tutorial</p><p class="res-by">J. S. Dokken</p><p class="res-note">Hands-on introduction to solving PDEs with DOLFINx, from the Poisson equation on.</p><a class="res-link" href="https://jsdokken.com/dolfinx-tutorial/" target="_blank" rel="noopener">Free online &rarr;</a></div></div>
+
+    <h2>Optimization</h2>
+    <div class="res-grid"><div class="res-item"><p class="res-title">Convex Optimization</p><p class="res-by">S. Boyd &amp; L. Vandenberghe &middot; Cambridge University Press, 2004</p><p class="res-note">The authors keep the full book available as a PDF on their page.</p><a class="res-link" href="https://www.seas.ucla.edu/~vandenbe/cvxbook.html" target="_blank" rel="noopener">Free PDF (authors' page) &rarr;</a></div><div class="res-item"><p class="res-title">Derivative-Free Optimization Methods</p><p class="res-by">J. Larson, M. Menickelly &amp; S. M. Wild &middot; Acta Numerica, 2019</p><p class="res-note">A survey of modern methods for optimization when gradients are not available.</p><a class="res-link" href="https://optimization-online.org/wp-content/uploads/2019/04/7153.pdf" target="_blank" rel="noopener">Free preprint &rarr;</a></div><div class="res-item"><p class="res-title">Introduction to Derivative-Free Optimization</p><p class="res-by">A. R. Conn, K. Scheinberg &amp; L. N. Vicente &middot; SIAM</p><p class="res-note">The standard book on derivative-free methods. The author page has the table of contents and errata.</p><a class="res-link" href="https://www.mat.uc.pt/~lnv/idfo/" target="_blank" rel="noopener">Book page (not free) &rarr;</a></div></div>
+
+    <h2>PINNs and symmetry in machine learning</h2>
+    <div class="res-grid"><div class="res-item"><p class="res-title">Physics Informed Deep Learning (Part I)</p><p class="res-by">M. Raissi, P. Perdikaris &amp; G. E. Karniadakis</p><p class="res-note">The original physics-informed neural networks (PINNs) preprint.</p><a class="res-link" href="https://arxiv.org/abs/1711.10561" target="_blank" rel="noopener">Free on arXiv &rarr;</a></div><div class="res-item"><p class="res-title">Lie Point Symmetry Data Augmentation for Neural PDE Solvers</p><p class="res-by">J. Brandstetter, M. Welling &amp; D. E. Worrall &middot; ICML 2022</p><p class="res-note">Uses the Lie point symmetries of a PDE to make neural solvers more data-efficient.</p><a class="res-link" href="https://arxiv.org/abs/2202.07643" target="_blank" rel="noopener">Free on arXiv &rarr;</a></div></div>
 
   </main>
 </div>
